@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InputType, type InputWrapperProps } from '@/types/input_types'
+import { InputType, type InputWrapperProps } from '@/types/inputTypes'
 
 defineProps<InputWrapperProps>()
 </script>

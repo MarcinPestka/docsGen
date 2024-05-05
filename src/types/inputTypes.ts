@@ -8,3 +8,9 @@ export type InputWrapperProps = {
   inputType: InputType
   validaiton: boolean
 }
+
+export type NewFormInput = {
+  label: string
+  inputType: string
+  description: string
+}

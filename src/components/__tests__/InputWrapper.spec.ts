@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
 import InputWrapper from '../form_inputs/InputWrapper.vue'
-import { InputType } from '@/types/input_types'
+import { InputType } from '@/types/inputTypes'
 
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
