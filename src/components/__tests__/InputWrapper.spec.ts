@@ -15,16 +15,36 @@ const vuetify = createVuetify({
 
 global.ResizeObserver = require('resize-observer-polyfill')
 
-describe('Input Wrapper renders correctly', () => {
+describe('Input Wrapper renders text input correctly', () => {
   const wrapper = mount(InputWrapper, {
     global: {
       components: { InputWrapper },
       plugins: [vuetify]
     },
-    props: { ...{ label: 'Custom title', validaiton: false, inputType: InputType.Text } }
+    props: { label: 'Custom text input title', validaiton: false, inputType: InputType.Text }
   })
 
-  it.each('renders properly', async () => {
-    expect(wrapper.find('.v-field-label--floating').exists() === true)
+  it.each([
+    [wrapper.find('.v-field-label--floating').text(), 'Custom text input title'],
+    [wrapper.find('[data-test-id="text-input"]').exists(), true]
+  ])('Renders correctly', (actual, expected) => {
+    expect(actual).toBe(expected)
+  })
+})
+
+describe('Input Wrapper renders select input correctly', () => {
+  const wrapper = mount(InputWrapper, {
+    global: {
+      components: { InputWrapper },
+      plugins: [vuetify]
+    },
+    props: { label: 'Custom select input title', validaiton: false, inputType: InputType.Select }
+  })
+
+  it.each([
+    [wrapper.find('.v-field-label--floating').text(), 'Custom select input title'],
+    [wrapper.find('[data-test-id="select-input"]').exists(), true]
+  ])('Renders correctly', (actual, expected) => {
+    expect(actual).toBe(expected)
   })
 })
