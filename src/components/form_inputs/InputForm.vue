@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { type NewFormInput } from '@/types/inputTypes
+import { type NewFormInput } from '@/types/inputTypes'
 import { requiredRule } from '@/utils/validationRules'
 
 const newInput = ref<NewFormInput>({ label: '', inputType: '', description: '' })
